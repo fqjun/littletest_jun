@@ -13,15 +13,3 @@ Example：
 分支名：英文拼音
 Example：Wu Chaojun
 
-We all different.
-
-mini_pc
-main_pc
-merge
-good
-V1.1.1
-好了是吧
-一起来更精彩
-好个得
-
-There shoule be no boundaries to human endeavor.
