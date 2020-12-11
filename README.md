@@ -16,3 +16,4 @@ Example：Wu Chaojun
 mini_pc
 main_pc
 merge
+V1.1.1
