@@ -15,3 +15,4 @@ Example：Wu Chaojun
 
 mini_pc
 main_pc
+V1.1.1
