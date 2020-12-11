@@ -17,3 +17,5 @@ mini_pc
 main_pc
 merge
 V1.1.1
+好了是吧
+一起来更精彩
