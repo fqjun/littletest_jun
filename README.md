@@ -12,3 +12,5 @@ Example：
 
 分支名：英文拼音
 Example：Wu Chaojun
+
+mini_pc
