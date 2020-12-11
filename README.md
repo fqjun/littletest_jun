@@ -13,8 +13,6 @@ Example：
 分支名：英文拼音
 Example：Wu Chaojun
 
-<<<<<<< HEAD
-=======
 第二次测试
 第一次测试
 1
@@ -26,4 +24,3 @@ Example：Wu Chaojun
 4
 
 5
->>>>>>> V1.1.1
