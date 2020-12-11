@@ -22,4 +22,4 @@ V1.1.1
 一起来更精彩
 好个得
 
-bad
+there should be no boundaries to human 
