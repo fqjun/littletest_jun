@@ -16,7 +16,10 @@ Example：Wu Chaojun
 mini_pc
 main_pc
 merge
+good
 V1.1.1
 好了是吧
 一起来更精彩
 好个得
+
+bad
