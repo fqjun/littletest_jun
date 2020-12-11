@@ -13,6 +13,8 @@ Example：
 分支名：英文拼音
 Example：Wu Chaojun
 
+We all different.
+
 mini_pc
 main_pc
 merge
@@ -22,4 +24,4 @@ V1.1.1
 一起来更精彩
 好个得
 
-there should be no boundaries to human 
+There shoule be no boundaries to human endeavor.
