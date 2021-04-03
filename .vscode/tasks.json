@@ -7,7 +7,7 @@
             "command": "/usr/bin/g++", /* 这里填写你的编译器地址 */
             "args": [
                 /* 类似与qt的Pro文件里开始的那几句 */
-                "-std=c++11", // 静态链接
+                "-std=c++14", // 静态链接
                 "-static-libgcc",
                 "-Wall", // 开启额外警告
                 /* 说明整个项目所需的头文件路径（.h）*/
@@ -22,6 +22,7 @@
                 /* 说明整个项目所需的源文件路径(.cpp) */
                 "-g",
                 "${workspaceFolder}/main.cpp", /* ${workspaceFolder}表示路径从当前项目文件夹开始 */
+                "${workspaceFolder}/setting.hpp",
                 "-o", /* 编译输出文件的存放路径 */
                 "${workspaceFolder}/bin/run.o", /* 要与launch.json文件里的program的内容保持一致 */
                 /* ${fileDirname} 是指 文件目录名 相当于${workspaceFolder}*/
