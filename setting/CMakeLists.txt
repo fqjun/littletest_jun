@@ -1,0 +1,11 @@
+# 先编译子目录的内容，再编译根目录的内容
+AUX_SOURCE_DIRECTORY(. DIR_LIB_SRCS)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
+#OpenCV 部分
+# 自动查找OpenCV的头文件
+FIND_PACKAGE(OpenCV REQUIRED)
+# 将给定的目录添加到编译器用于搜索包含文件的目录。相对路径则相对于当前源目录。 1
+INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+
+ADD_LIBRARY(Setlib STATIC ${DIR_LIB_SRCS})
