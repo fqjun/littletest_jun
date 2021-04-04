@@ -44,7 +44,6 @@ CMakeCache.txt
 CMakeFiles/
 *cmake
 *Makefile
-*run
 lib/
 
 #忽略掉 相机的生成文件

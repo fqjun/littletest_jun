@@ -1,4 +1,4 @@
-#include "setting/setting.hpp"
+#include "../setting/setting.hpp"
 // #include "setting.hpp"
 int main()
 {
