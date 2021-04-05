@@ -1,9 +1,36 @@
 # CMake 最低版本号要求 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+cmake_minimum_required(VERSION 3.10)
 
 # 项目信息 
-PROJECT(LITTLETEST_JUN)
+project(LITTLETEST_JUN)
 
 # 设置参数 
-SET(CMAKE_CXX_FLAGS "-std=c++14")
+set(CMAKE_CXX_FLAGS "-std=c++14")
 
+# OpenCV 
+find_package(OpenCV REQUIRED)
+# 将给定的目录添加到编译器用于搜索包含文件的目录。相对路径则相对于当前源目录。 
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+# 设置可执行文件的保存路径 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+# 查找当前目录下的所有源文件
+# 进入相应文件夹内,但该文件内还有一个
+aux_source_directory(. DIR_SRCS)
+
+# 等同于下面两句
+# 添加链接库的文件夹
+# add_subdirectory(setting)
+
+# 等同于上面的一句
+# 添加链接库头文件的路径
+# 添加链接库的路径
+include_directories("${PROJECT_SOURCE_DIR}/setting/include")
+link_directories("${PROJECT_SOURCE_DIR}/setting/build/lib")
+
+# 指定生成目标 
+add_executable(run.o ${DIR_SRCS})
+
+# 将给定的库链接到一个目标上 
+target_link_libraries(run.o ${OpenCV_LIBS} Set)

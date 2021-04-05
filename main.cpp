@@ -1,9 +1,11 @@
-#include "../setting/setting.hpp"
+// #include "../setting/setting.hpp"
+#include "./setting/include/setting.hpp"
 // #include "setting.hpp"
 int main()
 {
     Mat src = imread("/home/jun/workplace/test.png");
     imshow("src",src);
+    cout<<"sdlagsgasd"<<endl;
     test();
     waitKey(0);
     return 0;
