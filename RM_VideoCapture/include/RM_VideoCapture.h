@@ -21,7 +21,7 @@ using namespace std;
   */
 
 /* ------------------- 相机参数设置 ------------------- */
-#define CAMERA_EXPOSURETIME 800      // 800 400大神符 1200
+#define CAMERA_EXPOSURETIME 3000      // 800 400大神符 1200
 #define CAMERA_RESOLUTION_COLS 1280  // 1280 务必16的倍数！
 #define CAMERA_RESOLUTION_ROWS 800   // 800 务必2的倍数！
 #define CAMERA_RESOLUTION_COLS_FOV ((1280 - CAMERA_RESOLUTION_COLS) * 0.5)

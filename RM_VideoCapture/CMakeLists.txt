@@ -3,9 +3,6 @@ cmake_minimum_required(VERSION 3.10)
 # 先编译子目录的内容，再编译根目录的内容
 aux_source_directory(. DIR_LIB_SRCS)
 
-# 设置链接库文件的保存路径
-set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
-
 # OpenCV 部分
 # 自动查找OpenCV的头文件
 find_package(OpenCV REQUIRED)
@@ -13,6 +10,11 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 # OpenCV 部分
 
+# 相机链接库
+link_directories(lib)
+
 add_library(Camera SHARED ${DIR_LIB_SRCS})
+
+target_link_libraries(Camera MVSDK)
 
 target_include_directories(Camera PUBLIC include)

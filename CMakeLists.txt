@@ -4,8 +4,16 @@ cmake_minimum_required(VERSION 3.10)
 # 项目信息 
 project(LITTLETEST_JUN)
 
-# 设置参数 
-set(CMAKE_CXX_FLAGS "-std=c++14 -static-libgcc")
+# 设置编译参数 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+
+# add_compile_options(-std=c++14)
+set(CMAKE_CXX_FLAGS "-std=c++14 -Wall ${CMAKE_CXX_FLAGS}")
+# add_compile_options(-Wall)
+
 
 # OpenCV 
 find_package(OpenCV REQUIRED)
@@ -20,8 +28,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 aux_source_directory(. DIR_SRCS)
 
 # 等同于下面两句
-# 添加链接库的文件夹
+# 添加链接库的文件夹(全部)
 add_subdirectory(setting)
+add_subdirectory(RM_Link)
 add_subdirectory(RM_VideoCapture)
 
 # 等同于上面的一句
@@ -32,11 +41,9 @@ add_subdirectory(RM_VideoCapture)
 # include_directories("${PROJECT_SOURCE_DIR}/RM_VideoCapture/include")
 # link_directories("${PROJECT_SOURCE_DIR}/RM_VideoCapture/build/lib")
 
-# 相机链接库
-link_directories(lib)
 
 # 指定生成目标 
 add_executable(run.o ${DIR_SRCS})
 
 # 将给定的库链接到一个目标上 
-target_link_libraries(run.o ${OpenCV_LIBS} Camera Set MVSDK)
+target_link_libraries(run.o ${OpenCV_LIBS} Link Set MVSDK)

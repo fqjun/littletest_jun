@@ -6,6 +6,6 @@ void test(){
     // cout<<"test1:"<<*test<<endl;
     cout<<"hello"<<endl;
     imshow("frame",frame);
-    imshow("u1s1",frame);
+    // imshow("u1s1",frame);
 }
 
