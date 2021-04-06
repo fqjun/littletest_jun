@@ -4,16 +4,19 @@ cmake_minimum_required(VERSION 3.10)
 # 项目信息 
 project(LITTLETEST_JUN)
 
-# 设置编译参数 
+# set (CMAKE_C_COMPILER "/usr/bin/gcc")
+set (CMAKE_CXX_COMPILER "/usr/bin/g++")
+
+# 设置编译参数 cmake3.1以上
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}  -Wall")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}  -O3")
 
-# add_compile_options(-std=c++14)
-set(CMAKE_CXX_FLAGS "-std=c++14 -Wall ${CMAKE_CXX_FLAGS}")
-# add_compile_options(-Wall)
-
+# set(CMAKE_BUILD_TYPE "Release")
+set(CMAKE_BUILD_TYPE "Debug")
 
 # OpenCV 
 find_package(OpenCV REQUIRED)

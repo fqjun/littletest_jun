@@ -29,10 +29,15 @@ RM_Link::~RM_Link()
  */
 void RM_Link::run()
 {
+    double time  = 0.0;
+    double time1 = 0.0;
+    double time2 = 0.0;
+    double fps   = 0.0;
     while (true) {
+        time1 = getTickCount();
         if (industrialcapture->isindustryimgInput()) {
             *frame = cvarrToMat(industrialcapture->iplImage, true);
-            cout<<"Industrial Camera"<<endl;
+            // cout << "Industrial Camera" << endl;
         }
         // else {
         //     *capture >> *frame;
@@ -56,5 +61,9 @@ void RM_Link::run()
         if (waitKey(1) == 'q') {
             break;
         }
+        time2 = getTickCount();
+        time  = (time2 - time1) / getTickFrequency();
+        fps   = 1.f / time;
+        cout << "fps:" << fps << endl;
     }
 }
