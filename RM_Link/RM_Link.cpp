@@ -33,16 +33,24 @@ void RM_Link::run()
     double time1 = 0.0;
     double time2 = 0.0;
     double fps   = 0.0;
+    bool flag = true;
     while (true) {
         time1 = getTickCount();
-        if (industrialcapture->isindustryimgInput()) {
+        if(waitKey(1)=='i'){
+            flag = true;
+        }else if (waitKey(1)=='o')
+        {
+            flag = false;
+        }
+
+        if (industrialcapture->isindustryimgInput()&&flag==true) {
             *frame = cvarrToMat(industrialcapture->iplImage, true);
             // cout << "Industrial Camera" << endl;
         }
-        // else {
-        //     *capture >> *frame;
-        //     cout<<"Usb Camera"<<endl;
-        // }
+        else {
+            *capture >> *frame;
+            cout<<"Usb Camera"<<endl;
+        }
 
         if (frame->empty()) {
             cout << "图像为空" << endl;
