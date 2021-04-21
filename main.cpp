@@ -7,6 +7,9 @@ int main()
     unique_ptr<RM_Link> run =make_unique<RM_Link>();
     run->run();
 
+    // 测试返回数组
+    test01();
+
     Mat src = imread("/home/jun/workplace/test.png");
     imshow("src", src);
     cout << "sdlagsgasd" << endl;
