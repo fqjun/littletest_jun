@@ -31,8 +31,7 @@ int* Array::getArray()
 
 void Array::displayArray()
 {
-    for (size_t i = 0; i < sizeof(transform_arr) / sizeof(transform_arr[0]);
-         ++i) {
+    for (size_t i:transform_arr){
         cout << "transform[" << i << "] =" << transform_arr[i] << endl;
     }
 }
