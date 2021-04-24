@@ -9,6 +9,12 @@ RM_Link::RM_Link()
     : industrialcapture(make_unique<RM_VideoCapture>(ISOPEN_INDUSTRY_CAPTURE)),
       capture(make_unique<VideoCapture>(USB_CAPTURE_DEFULT))
 {
+    // 初始化信使
+    this->messenger = make_unique<RM_Messenger>(messenger_cfg);
+
+    // 初始化串口
+    this->serial = make_unique<SerialPort>();
+
     // 初始化图像
     frame   = make_unique<Mat>();
     src_img = make_unique<Mat>();
@@ -59,6 +65,13 @@ void RM_Link::run()
 
         this->frame->copyTo(*src_img);
 
+        // 读取串口数据
+        SerialPort::RMreceiveData(this->receive_arr);
+        this->messenger->updateReceiveInformation(this->receive_arr);
+
+        // 发送串口数据
+        SerialPort::RMserialWrite(1,1,12,32,24,3,6);
+
         imshow("frame", *frame);
         // imshow("src_img", *src_img);
 
@@ -71,6 +84,7 @@ void RM_Link::run()
         }
         time2 = getTickCount();
         time  = (time2 - time1) / getTickFrequency();
+        cout<<time*1000.0<<"毫秒"<<endl;
         fps   = 1.f / time;
         cout << "fps:" << fps << endl;
     }

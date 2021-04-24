@@ -15,6 +15,6 @@ aux_source_directory(. DIR_LIB_SRCS)
 
 add_library(Link SHARED ${DIR_LIB_SRCS})
 
-target_link_libraries(Link Camera)
+target_link_libraries(Link Camera Serial Messenger)
 
 target_include_directories(Link PUBLIC include)

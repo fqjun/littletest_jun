@@ -33,17 +33,10 @@ aux_source_directory(. DIR_SRCS)
 # 等同于下面两句
 # 添加链接库的文件夹(全部)
 add_subdirectory(setting)
-add_subdirectory(RM_Link)
-add_subdirectory(RM_VideoCapture)
-
-# 等同于上面的一句
-# 添加链接库头文件的路径
-# 添加链接库的路径
-# include_directories("${PROJECT_SOURCE_DIR}/setting/include")
-# link_directories("${PROJECT_SOURCE_DIR}/setting/build/lib")
-# include_directories("${PROJECT_SOURCE_DIR}/RM_VideoCapture/include")
-# link_directories("${PROJECT_SOURCE_DIR}/RM_VideoCapture/build/lib")
-
+add_subdirectory(Basis/RM_Link)
+add_subdirectory(Basis/RM_VideoCapture)
+add_subdirectory(Basis/RM_Serial)
+add_subdirectory(Tools/RM_Messenger)
 
 # 指定生成目标 
 add_executable(run.o ${DIR_SRCS})

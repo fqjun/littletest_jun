@@ -1,7 +1,9 @@
 #pragma once
-#include <opencv4/opencv2/opencv.hpp>
-#include "../../RM_VideoCapture/include/RM_VideoCapture.h"
+#include "../../../Basis/RM_Serial/include/RM_Serial.h"
+#include "../../../Basis/RM_VideoCapture/include/RM_VideoCapture.h"
+#include "../../../Tools/RM_Messenger/include/RM_Messenger.hpp"
 #include <memory>
+#include <opencv4/opencv2/opencv.hpp>
 
 using namespace std;
 using namespace cv;
@@ -24,6 +26,10 @@ class RM_Link {
     unique_ptr<RM_VideoCapture> industrialcapture;
     /* USB相机 */
     unique_ptr<VideoCapture> capture;
+    /* 串口通讯 */
+    unique_ptr<SerialPort> serial;
+    /* 信使 */
+    unique_ptr<RM_Messenger> messenger;
 
   private:
     /* Model TODO*/
@@ -32,9 +38,9 @@ class RM_Link {
 
   private:
     /* Tools */
-// #if COUT_FPS == 1
+    // #if COUT_FPS == 1
     /* 计算帧率 */
-// #endif
+    // #endif
     /* 录制视频 TODO 添加开关*/
     /* 文件数据交换 TODO 添加开关*/
 
@@ -42,5 +48,10 @@ class RM_Link {
     //公共原图
     unique_ptr<Mat> frame;
     unique_ptr<Mat> src_img;
+
+  private:
+    // test
+    Messenger_Cfg messenger_cfg;
+    unsigned char receive_arr[REC_BUFF_LENGTH];
 
 };
